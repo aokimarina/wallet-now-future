@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
 
-export const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+export const AllTransactionPage = () => {
+  return <div>入出金一覧</div>;
+};
+export default AllTransactionPage;
