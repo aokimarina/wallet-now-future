@@ -3,7 +3,7 @@ import CurrentPage from "./current/page";
 
 export default function Home() {
   return (
-    <section className="h-screen flex flex-row items-center justify-center gap-30 p-12  bg-gray-100 shadow-lg">
+    <section className="h-screen flex flex-row items-center justify-center bg-gray-100 ">
       {/* タイトル部分 */}
       <div className="text-left text-gray-600 space-y-2">
         <h1 className="text-6xl font-bold ">いま</h1>
