@@ -1,3 +1,3 @@
 ### このコマンドで初期設定
 
-- npm run dev
+- pip install -r requirements.txt

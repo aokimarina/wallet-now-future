@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
 
-export const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+export const PeriodPage = () => {
+  return <div>period</div>;
+};
+export default PeriodPage;

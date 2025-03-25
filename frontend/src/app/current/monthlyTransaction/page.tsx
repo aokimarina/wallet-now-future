@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-export const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+export const MonthlyTransactionPage = () => {
+  return <div>月別入出金一覧</div>;
+};
+
+export default MonthlyTransactionPage;
