@@ -36,9 +36,11 @@ const Header: React.FC = () => {
 
   return (
     <header className="bg-yellow-100 flex flex-row items-center justify-center">
-      <p>目標金額: {TARGET_AMOUNT.toLocaleString()}円</p>
-      <p>現在残高: {currentBalance.toLocaleString()}円</p>
-      <p>目標金額到達まで: {difference.toLocaleString()}円</p>
+      <p className="text-gray-800">
+        目標金額：{TARGET_AMOUNT.toLocaleString()}円{" - "}
+        現在残高：{currentBalance.toLocaleString()}円{" = "}
+        目標到達まで：{difference.toLocaleString()}円
+      </p>
     </header>
   );
 };
