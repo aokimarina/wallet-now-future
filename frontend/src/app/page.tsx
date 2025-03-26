@@ -4,9 +4,12 @@ import CurrentPage from "./current/page";
 export default function Home() {
   return (
     <section
-      className="h-screen flex flex-row items-center justify-center gap-30 p-12  bg-gray-100 shadow-lg"
+      className="h-screen flex flex-row items-center justify-center gap-30 p-12  bg-white shadow-lg"
       style={{
         backgroundImage: "url('/画像候補.png')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        backgroundPosition: "center",
       }}
     >
       {/* タイトル部分 */}
