@@ -9,7 +9,9 @@ const FuturePage = () => {
   return (
     <section>
       {/* ヘッダー */}
-      <div className="flex flex-row w-full h-40 border-b-4 border-gray-400 bg-yellow-100">
+
+      <div className="w-full h-40 border-b-4 border-gray-400 bg-yellow-100 text-4xl pt-13">
+
         <HeaderPage />
         <div className="ml-auto">
           <HomeButton />
