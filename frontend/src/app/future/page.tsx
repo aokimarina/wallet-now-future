@@ -1,9 +1,10 @@
 import React from "react";
 import HeaderPage from "./header/page";
-import AdvicePage from "./advice/page";
+
 import GraphPage from "./graph/page";
 import PeriodPage from "./period/page";
 import HomeButton from "../components/buttons/HomeButton";
+import AdviceForm from "./advice/page";
 
 const FuturePage = () => {
   return (
@@ -11,11 +12,7 @@ const FuturePage = () => {
       {/* ヘッダー */}
 
       <div className="w-full h-40 border-b-4 border-gray-400 bg-yellow-100 text-4xl pt-13">
-
         <HeaderPage />
-        <div className="ml-auto">
-          <HomeButton />
-        </div>
       </div>
 
       {/* グラフ & その他 */}
@@ -31,7 +28,7 @@ const FuturePage = () => {
             <PeriodPage />
           </div>
           <div className="border-4 border-gray-300 rounded-lg p-8 bg-white h-auto min-h-[250px]">
-            <AdvicePage />
+            <AdviceForm />
           </div>
         </div>
       </div>

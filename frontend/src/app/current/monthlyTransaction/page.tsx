@@ -1,7 +1,13 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 export const MonthlyTransactionPage = () => {
-  return <div>月別入出金一覧</div>;
+  const [data, setData] = useState<transactionType>();
+  return (
+    <section>
+      <div>月別入出金一覧</div>
+    </section>
+  );
 };
 
 export default MonthlyTransactionPage;
