@@ -18,7 +18,7 @@ const FuturePage = () => {
       {/* グラフ & その他 */}
       <div className="w-full h-[800] flex flex-row justify-center pt-25 gap-6 bg-gray-100">
         {/* グラフ */}
-        <div className="w-2/3 max-w-2xl border-4 border-gray-300 rounded-lg p-8 bg-white mb-45 h-auto min-h-[250px]">
+        <div className="w-2/3 max-w-2xl border-4 border-gray-300 rounded-lg p-8 bg-white mb-38 h-auto min-h-[250px]">
           <GraphPage />
         </div>
 
