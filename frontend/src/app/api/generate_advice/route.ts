@@ -18,12 +18,15 @@ export async function POST(req: NextRequest) {
     });
 
     // FlaskバックエンドAPIへのリクエスト
-    const response = await axios.post("http://localhost:5000/generate_advice", {
-      current_balance,
-      target_amount,
-      remaining_period,
-      savings_this_month,
-    });
+    const response = await axios.post(
+      "http://localhost:5000/llm/generate_advice",
+      {
+        current_balance,
+        target_amount,
+        remaining_period,
+        savings_this_month,
+      }
+    );
 
     return NextResponse.json(response.data);
   } catch (error) {

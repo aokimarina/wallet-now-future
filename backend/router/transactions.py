@@ -1,31 +1,22 @@
-# 残高取得
+from flask import  Blueprint, jsonify
 import requests
+import os
 
-url = "https://api.sunabar.gmo-aozora.com/personal/v1/accounts/balances"
+transactions_bp = Blueprint('transactions', __name__)
 
-payload = {}
-headers = {
-  'Accept': 'application/json;charset=UTF-8',
-  'Content-Type': 'application/json;charset=UTF-8',
-  'x-access-token': 'NGEyZDlkYmMzZWVlNDFlZjQwMzAzODZm'
-}
+@transactions_bp.route("", methods=["GET"])
+def get_transactions():
+    url = "https://api.sunabar.gmo-aozora.com/personal/v1/accounts/transactions"
+    x_access_token = os.getenv("X_ACCESS_TOKEN")
+    headers = {
+      'Accept': 'application/json;charset=UTF-8',
+      'Content-Type': 'application/json;charset=UTF-8',
+      'x-access-token': x_access_token
+    }
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        return jsonify(response.json())
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500    
 
-response = requests.request("GET", url, headers=headers, data=payload)
-
-print(response.text)
-
-# 明細取得
-import requests
-
-url = "https://api.sunabar.gmo-aozora.com/personal/v1/accounts/transactions?accountId=302010010191&dateFrom=2024-06-17&dateTo=2024-06-18&nextItemKey=0"
-
-payload = {}
-headers = {
-  'Accept': 'application/json;charset=UTF-8',
-  'Content-Type': 'application/json;charset=UTF-8',
-  'x-access-token': 'NGEyZDlkYmMzZWVlNDFlZjQwMzAzODZm'
-}
-
-response = requests.request("GET", url, headers=headers, data=payload)
-
-print(response.text)
