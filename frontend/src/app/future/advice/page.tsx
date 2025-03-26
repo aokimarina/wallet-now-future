@@ -112,12 +112,12 @@ const AdviceForm = () => {
       {/* ポップアップモーダル */}
       {showModal && (
         <div className=" fixed inset-0 flex justify-center items-center z-10 ">
-          <div className="bg-yellow-50 p-4 rounded shadow-lg max-w-sm w-full">
+          <div className="border-4 border-green-800 bg-yellow-50 p-4 rounded shadow-lg max-w-sm w-full">
             <p>{advice}</p>
             <div className="flex justify-end">
               <button
                 onClick={() => setShowModal(false)}
-                className="px-4 py-2 text-sm bg-amber-500 hover:bg-amber-300 text-white rounded"
+                className="px-4 py-2 text-sm bg-green-800 hover:bg-green-600 text-white rounded"
               >
                 閉じる
               </button>

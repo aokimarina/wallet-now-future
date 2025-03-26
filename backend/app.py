@@ -1,9 +1,14 @@
+import sys
+import os
+import requests
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import requests
-import os
 from dotenv import load_dotenv
 import openai
+
+
+# 正しいパスを設定
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'backend')))
 
 # .envファイルを読み込む
 load_dotenv()
@@ -13,28 +18,21 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 client = openai.OpenAI(api_key=openai_api_key)  # 修正: openai.OpenAI() を使用
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"], "allow_headers": ["Content-Type", "Authorization"]}})
+
+# インポートを実行
+from router.balances import balances_bp
+from router.transactions import transactions_bp
+# from router.llm import llm_bp
+
+# ブループリントを登録
+app.register_blueprint(balances_bp, url_prefix="/balances")
+app.register_blueprint(transactions_bp, url_prefix="/transactions")
+# app.register_blueprint(llm_bp, url_prefix="/llm")
 
 @app.route("/")
 def hello():
     return "Hello, Flask!"
-
-# 外部APIから残高を取得するエンドポイント
-@app.route("/balances", methods=["GET"])
-def get_balances():
-    url = "https://api.sunabar.gmo-aozora.com/personal/v1/accounts/balances"
-    x_access_token = os.getenv("X_ACCESS_TOKEN")
-    headers = {
-        "Accept": "application/json;charset=UTF-8",
-        "Content-Type": "application/json;charset=UTF-8",
-        "x-access-token": x_access_token
-    }
-    try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        return jsonify(response.json())
-    except requests.exceptions.RequestException as e:
-        return jsonify({"error": str(e)}), 500
 
 @app.route("/generate_advice", methods=["POST"])
 def generate_advice():
