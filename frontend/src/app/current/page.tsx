@@ -5,14 +5,16 @@ import TotalSavingPage from "./totalSaving/page";
 
 const CurrentPage = () => {
   return (
-    <section className="flex flex-row justify-center items-center w-full mt-10">
+    <section className="flex flex-row justify-center items-center w-full  bg-[url('/今ページ.png')] bg-no-repeat bg-cover">
       <div className="flex flex-row w-full justify-between gap-12">
         <div className="text-center w-full border-r-2 border-dotted border-gray-400 p-4 min-h-[900px]">
           <AllTransaction />
         </div>
-        {/* <div className="text-center w-full border-r-2 border-dotted border-gray-400 p-4 min-h-[900px]">
-          <MonthlyTransactionPage />
-        </div> */}
+        {
+          <div className="text-center w-full border-r-2 border-dotted border-gray-400 p-4 min-h-[900px]">
+            <MonthlyTransactionPage />
+          </div>
+        }
         <div className="text-center w-full p-4 min-h-[200px]">
           <TotalSavingPage />
         </div>
