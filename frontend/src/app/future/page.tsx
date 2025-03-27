@@ -33,6 +33,9 @@ const FuturePage = () => {
           </div>
         </div>
       </div>
+      <div className="items-center">
+        <HomeButton />
+      </div>
     </section>
   );
 };
