@@ -41,7 +41,7 @@ export const AllTransactionPage = () => {
 
   return (
     <div className="p-6 text-gray-800">
-      <h1 className="text-3xl font-bold mb-6">3月の入出金履歴</h1>
+      <h1 className="text-3xl font-bold mb-6">入出金履歴</h1>
 
       {error && <p className="text-red-500">{error}</p>}
 
@@ -62,7 +62,7 @@ export const AllTransactionPage = () => {
               <tr key={index} className="hover:bg-gray-100">
                 <td className="border px-4 py-2">{t.transactionDate}</td>
                 <td className="border px-4 py-2">
-                  {t.transactionType === 1 ? "入金" : "出金"}
+                  {Number(t.transactionType) === 1 ? "入金" : "出金"}
                 </td>
                 <td className="border px-4 py-2 text-right">
                   {t.amount.toLocaleString()} 円
