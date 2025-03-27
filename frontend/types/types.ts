@@ -29,4 +29,5 @@ type Transaction = {
   transactionType: number; // 1 = 入金, 2 = 出金
   amount: number;
   balance: number;
+  remarks: string;
 };
