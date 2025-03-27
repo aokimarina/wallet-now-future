@@ -55,7 +55,7 @@ const MonthlySummaryPage = () => {
   );
 
   return (
-    <div className="p-6 max-w-4xl mx-auto text-black">
+    <div className="p-6 max-w-4xl mx-auto  text-gray-800">
       <h1 className="text-3xl font-bold mb-6 text-center">
         月ごとの収支サマリ
       </h1>
@@ -90,14 +90,14 @@ const MonthlySummaryPage = () => {
         </div>
       </div>
 
-      {/* 明細表示 */}
       {filteredTransactions.length > 0 ? (
         <div className="overflow-x-auto">
           <h2 className="text-2xl font-semibold mb-4">
             {selectedMonth} の取引明細
           </h2>
+          <div className="bg-white/70 shadow-md overflow-hidden backdrop-blur-md">
           <table className="min-w-full border border-gray-300 text-sm">
-            <thead className="bg-gray-100 text-black">
+            <thead className="bg-purple-100"  style={{ color: '#5C4E74' }}>
               <tr>
                 <th className="border px-4 py-2 text-center">日付</th>
                 <th className="border px-4 py-2 text-center">種別</th>
@@ -108,7 +108,7 @@ const MonthlySummaryPage = () => {
             </thead>
             <tbody>
               {filteredTransactions.map((t, index) => (
-                <tr key={index} className="hover:bg-gray-50 text-black">
+                <tr key={index} className="hover:bg-purple-50 text-gray-800">
                   <td className="border px-4 py-2">{t.transactionDate}</td>
                   <td className="border px-4 py-2 text-center">
                     {getTransactionTypeLabel(t.transactionType)}
@@ -128,6 +128,7 @@ const MonthlySummaryPage = () => {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       ) : (
         <p className="text-center text-gray-500">データがありません</p>
