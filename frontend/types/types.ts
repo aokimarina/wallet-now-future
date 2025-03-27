@@ -23,3 +23,10 @@ export type TransactionType = {
   hasNext: string;
   count: string;
 };
+
+type Transaction = {
+  transactionDate: string;
+  transactionType: number; // 1 = 入金, 2 = 出金
+  amount: number;
+  balance: number;
+};

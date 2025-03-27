@@ -13,8 +13,16 @@ def get_transactions():
       'Content-Type': 'application/json;charset=UTF-8',
       'x-access-token': x_access_token
     }
+
+  # クエリパラメータを取得してURLに追加
+    params = {
+        'accountId': '302010010191',
+        'dateFrom': '2025-03-01',
+        'dateTo': '2025-03-31'
+    }
+
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, params=params)
         response.raise_for_status()
         return jsonify(response.json())
     except requests.exceptions.RequestException as e:
