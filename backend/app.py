@@ -30,9 +30,14 @@ app.register_blueprint(balances_bp, url_prefix="/balances")
 app.register_blueprint(transactions_bp, url_prefix="/transactions")
 # app.register_blueprint(llm_bp, url_prefix="/llm")
 
+
 @app.route("/")
 def hello():
     return "Hello, Flask!"
+
+
+#------------------------------------------------------------------
+# TODO:以下、LLMのroute、余裕があったらrouter配下に入れる。
 
 @app.route("/generate_advice", methods=["POST"])
 def generate_advice():
@@ -74,6 +79,8 @@ def generate_advice():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"error": "サーバー内部でエラーが発生しました", "details": str(e)}), 500
+    
+#------------------------------------------------------
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
