@@ -1,9 +1,6 @@
-import FuturePage from "./future/page";
-import CurrentPage from "./current/page";
-
 export default function Home() {
   return (
-    <section className="h-screen flex flex-row items-center justify-center gap-30 p-12  bg-gray-100 shadow-lg">
+    <section className="h-screen flex flex-row items-center justify-center gap-30 p-12 bg-[url('/ミモザ.png')] bg-no-repeat bg-cover">
       {/* タイトル部分 */}
       <div className="text-left text-gray-600 space-y-2">
         <h1 className="text-6xl font-bold ">いま</h1>
@@ -17,7 +14,7 @@ export default function Home() {
       <div className="flex flex-col items-center space-y-20">
         <a
           href="/current"
-          className="w-70 px-10 py-6 text-2xl bg-blue-300 text-white font-semibold rounded-lg shadow-md text-center hover:bg-blue-200 transition"
+          className="w-70 px-10 py-6 text-2xl bg-purple-300 text-white font-semibold rounded-lg shadow-md text-center hover:bg-purple-200 transition"
         >
           今を見に行く
         </a>

@@ -1,0 +1,123 @@
+[
+
+  {
+    "transactionDate": "2025-02-01",
+    "transactionType": 2,
+    "amount": 120000,
+    "balance": 880000
+  },
+  {
+    "transactionDate": "2025-02-02",
+    "transactionType": 1,
+    "amount": 50000,
+    "balance": 930000
+  },
+  {
+    "transactionDate": "2025-02-03",
+    "transactionType": 2,
+    "amount": 30000,
+    "balance": 900000
+  },
+  {
+    "transactionDate": "2025-02-05",
+    "transactionType": 2,
+    "amount": 80000,
+    "balance": 820000
+  },
+  {
+    "transactionDate": "2025-02-06",
+    "transactionType": 1,
+    "amount": 20000,
+    "balance": 840000
+  },
+  {
+    "transactionDate": "2025-02-08",
+    "transactionType": 2,
+    "amount": 90000,
+    "balance": 750000
+  },
+  {
+    "transactionDate": "2025-02-09",
+    "transactionType": 2,
+    "amount": 40000,
+    "balance": 710000
+  },
+  {
+    "transactionDate": "2025-02-10",
+    "transactionType": 1,
+    "amount": 10000,
+    "balance": 720000
+  },
+  {
+    "transactionDate": "2025-02-12",
+    "transactionType": 2,
+    "amount": 60000,
+    "balance": 660000
+  },
+  {
+    "transactionDate": "2025-02-13",
+    "transactionType": 2,
+    "amount": 20000,
+    "balance": 640000
+  },
+  {
+    "transactionDate": "2025-02-14",
+    "transactionType": 1,
+    "amount": 5000,
+    "balance": 645000
+  },
+  {
+    "transactionDate": "2025-02-15",
+    "transactionType": 2,
+    "amount": 35000,
+    "balance": 610000
+  },
+  {
+    "transactionDate": "2025-02-17",
+    "transactionType": 2,
+    "amount": 50000,
+    "balance": 560000
+  },
+  {
+    "transactionDate": "2025-02-18",
+    "transactionType": 1,
+    "amount": 5000,
+    "balance": 565000
+  },
+  {
+    "transactionDate": "2025-02-20",
+    "transactionType": 2,
+    "amount": 65000,
+    "balance": 500000
+  },
+  {
+    "transactionDate": "2025-02-21",
+    "transactionType": 1,
+    "amount": 10000,
+    "balance": 510000
+  },
+  {
+    "transactionDate": "2025-02-22",
+    "transactionType": 2,
+    "amount": 10000,
+    "balance": 500000
+  },
+  {
+    "transactionDate": "2025-02-24",
+    "transactionType": 1,
+    "amount": 15000,
+    "balance": 515000
+  },
+  {
+    "transactionDate": "2025-02-25",
+    "transactionType": 1,
+    "amount": 5000,
+    "balance": 520000
+  },
+  {
+    "transactionDate": "2025-02-27",
+    "transactionType": 2,
+    "amount": 20000,
+    "balance": 500000
+  }
+]
