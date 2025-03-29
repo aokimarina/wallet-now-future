@@ -1,10 +1,3 @@
-// import React from "react";
-
-// export const GraphPage = () => {
-//   return <div>graph</div>;
-// };
-// export default GraphPage;
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -39,6 +32,7 @@ const calculateYearsUntilSixty = (birthday: string): number => {
 
 const GraphPage = () => {
   const [numericBalance, setNumericBalance] = useState<number | null>(null);
+  const [interestRate, setInterestRate] = useState<number>(0.02);
 
   useEffect(() => {
     const fetchBalance = async () => {
@@ -57,7 +51,6 @@ const GraphPage = () => {
   if (numericBalance === null) return <div>Loading...</div>;
 
   const years = calculateYearsUntilSixty(USER_BIRTHDAY);
-  const interestRate = 0.02;
   const difference = TARGET_AMOUNT - numericBalance;
 
   const annualPayment = difference * (interestRate / (Math.pow(1 + interestRate, years) - 1));
@@ -86,9 +79,9 @@ const GraphPage = () => {
     responsive: true,
     scales: {
       y: {
-        beginAtZero: false,
-        min: 300,
-        max: 2100,
+        beginAtZero: true,
+        min: 0,
+        max: 2500,
         title: { display: true, text: "貯金額（万円）" },
       },
       x: {
@@ -99,10 +92,26 @@ const GraphPage = () => {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <h2 className="text-xl font-bold mb-4">減債基金係数による貯蓄予測グラフ</h2>
+      <h2 className="text-xl font-bold mb-4">あなたの貯蓄予測グラフ</h2>
       <Line data={chartData} options={options} />
+
+      {/* ボタンで利率を切り替える */}
+    <div className="mt-6 flex gap-4 justify-center">
+      <button 
+      onClick={() => setInterestRate(0.002)}
+      className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">
+      複利0.2%
+      </button>
+      <button 
+      onClick={() => (setInterestRate(0.03))}
+      className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">
+      複利3%
+      </button>
     </div>
+    </div>
+  
   );
 };
+
 
 export default GraphPage;

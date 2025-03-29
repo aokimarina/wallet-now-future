@@ -48,7 +48,7 @@ export const AllTransactionPage = () => {
       <thead className="bg-purple-100" style={{ color: '#5C4E74' }}>
         <tr>
           <th className="border px-4 py-2 text-center">日付</th>
-          <th className="border px-4 py-2 text-center">種類</th>
+          <th className="border px-4 py-2 text-center">種別</th>
           <th className="border px-4 py-2 text-center">金額</th>
           <th className="border px-4 py-2 text-center">残高</th>
           <th className="border px-4 py-2 text-center">備考</th>
